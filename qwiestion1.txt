@@ -1,0 +1,23 @@
+Q-1. Deploy a website on localhost using either apache2 or Nginx. Create a DNS name for this website as ‘awesomeweb’. You can use any web template you want or can write your own simple HTML code. 
+Write the detailed documentation with the steps involved. 
+Ans:
+pwd
+mkdir /var/www/awesomeweb
+sudo mkdir /var/www/awesomeweb
+cd /var/www/
+ls
+sudo nano /var/www/awesomeweb/index.html
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/awesomeweb
+sudo nano /etc/nginx/sites-available/awesomeweb
+sudo ln -s /etc/nginx/sites-available/awesomeweb /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+sudo systemctl status nginx
+sudo nano /etc/hosts
+hostname -i
+  
+Q-2. A website can have many subdomains and different services are running on them. Write a Python script to check the status of the subdomains which are up or down. The script should automatically check the status every minute and should update it in tabular format on the screen. 
+Write documentation of it.
+
+Ans:
+pip install requests tabulate
